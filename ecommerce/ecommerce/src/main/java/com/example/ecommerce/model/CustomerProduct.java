@@ -16,7 +16,7 @@ public class CustomerProduct {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int cid;
-//    private int uid;
+    private int uid;
     private double cost;
     private String image;
     private String title;
