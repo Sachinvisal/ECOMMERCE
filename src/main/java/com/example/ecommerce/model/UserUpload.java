@@ -9,17 +9,16 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-@Table(name = "customer_product")
-public class CustomerProduct {
+@Table(name = "user_upload")
+public class UserUpload {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private double cost;
     private String image;
-    private String title;
 
-    // customer_product & cart relationship(M:1)
+    // UserUpload & User relationship (M:1)
     @ManyToOne
-    @JoinColumn(name = "cart_id", referencedColumnName = "id")
-    private Cart cart;
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    private User user;
 }

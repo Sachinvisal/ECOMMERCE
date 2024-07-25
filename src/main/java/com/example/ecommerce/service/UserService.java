@@ -1,5 +1,4 @@
 package com.example.ecommerce.service;
 
-public class UserUploardService {
-
+public class UserService {
 }
