@@ -17,6 +17,7 @@ public class Orders {
     private Long id;
     private String address;
     private String city;
+    //@Column(name = "state",nullable = false) --> backend validation part in spring boot(java) required..
     private String state;
     private int zipCode;
     private String name;
