@@ -20,7 +20,7 @@ public class User {
     private String email;
     private String role;
     private String password;
-    private int contact;
+    private Integer contact;
 
     // UserUploard & User relationship (1:M)
     @OneToMany(mappedBy = "user")

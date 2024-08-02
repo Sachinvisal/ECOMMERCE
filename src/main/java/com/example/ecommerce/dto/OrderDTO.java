@@ -15,8 +15,8 @@ public class OrderDTO {
     private String address;
     private String city;
     private String state;
-    private int zip_code;
-    private int contact;
-    private int order_id;
-    private int customer_id;
+    private Integer zip_code;
+    private Integer contact;
+    private Integer order_id;
+    private Integer customer_id;
 }

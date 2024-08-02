@@ -17,6 +17,7 @@ public class UserUpload {
     private Long id;
     private String image;
 
+
     // UserUpload & User relationship (M:1)
     @ManyToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id")

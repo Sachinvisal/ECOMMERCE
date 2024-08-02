@@ -10,10 +10,10 @@ import lombok.NoArgsConstructor;
 @Data
 public class CartDTO {
     @JsonProperty("order_id")
-    private int order_id;
-    private int quantity;
-    private int size;
+    private Integer order_id;
+    private Integer quantity;
+    private Integer size;
     private String custom;
-    private int product_id;
+    private Integer product_id;
 
 }

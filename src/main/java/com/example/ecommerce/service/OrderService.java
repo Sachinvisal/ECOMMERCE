@@ -17,11 +17,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import java.util.List;
 
 @Service
-@Transactional
 @RequiredArgsConstructor
 public class OrderService {
 
-    private final OrderRepo orderRepo;
+    private final OrderRepo orderRepo;  //final is feel injection part so this is best
 
     private final ModelMapper modelMapper;
 
@@ -32,13 +31,14 @@ public class OrderService {
     }
 
    //Order Save function
+   @Transactional
     public OrderDTO addOrder(OrderDTO orderDTO){
         orderRepo.save(modelMapper.map(orderDTO,Orders.class));
         return orderDTO;
     }
 
     //Update order function
-
+    @Transactional
     public OrderDTO updateOrder(OrderDTO orderDTO, long id) {
         Orders existingOrder = orderRepo.findById(id).orElseThrow(() -> new EntityNotFoundException("Order not found with id: " + id));
 

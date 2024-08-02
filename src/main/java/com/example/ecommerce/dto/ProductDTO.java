@@ -10,7 +10,7 @@ import java.util.List;
 @AllArgsConstructor
 @Data
 public class ProductDTO {
-    private int product_ID;
+    private Integer product_ID;
     private double price;
     private String color;
     private String brand;

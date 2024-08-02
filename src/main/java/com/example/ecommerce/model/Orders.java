@@ -21,7 +21,7 @@ public class Orders {
     private String city;
     //@Column(name = "state",nullable = false) --> backend validation part in spring boot(java) required..
     private String state;
-    private int zipCode;
+    private Integer zipCode;
     private String name;
 
     // Order cart relationship (M:1)
