@@ -42,9 +42,9 @@ public class OrderService {
     public OrderDTO updateOrder(OrderDTO orderDTO, long id) {
         Orders existingOrder = orderRepo.findById(id).orElseThrow(() -> new EntityNotFoundException("Order not found with id: " + id));
 
-//        existingOrder.setCity(orderDTO.getCity());
+        existingOrder.setCity(orderDTO.getCity());
         existingOrder.setName(orderDTO.getName());
-//        existingOrder.setState(orderDTO.getState());
+        existingOrder.setState(orderDTO.getState());
         existingOrder.setAddress(orderDTO.getAddress());
         existingOrder.setZipCode(orderDTO.getZip_code());
         orderRepo.save(existingOrder);
