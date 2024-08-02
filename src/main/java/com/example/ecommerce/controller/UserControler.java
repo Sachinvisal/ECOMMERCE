@@ -3,10 +3,7 @@ package com.example.ecommerce.controller;
 import com.example.ecommerce.dto.UserDTO;
 import com.example.ecommerce.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,5 +20,19 @@ public class UserControler {
     public List<UserDTO>getUser(){
         return userService.getUserAll();
     }
+
+    //User add method
+    @PostMapping("/addUser")
+    public UserDTO addUser(@RequestBody UserDTO userDTO){
+        return userService.addUser(userDTO);
+    }
+
+    //Delete User
+    @DeleteMapping("/deleteUser/{userID}")
+    public void DeleteUser(@PathVariable Long userID){
+      userService.deleteUser(userID);
+
+    }
+
 
 }
