@@ -20,9 +20,7 @@ public class Cart {
     private String custom;
     private int size;
 
-    // customer_product & cart relationship(1:M)
-    @OneToMany(mappedBy = "cart")
-    private List<CustomerProduct> customerProductList;
+
 
     // cart & product relationship(M:M)
     @ManyToMany(fetch = FetchType.EAGER, cascade = { CascadeType.MERGE, CascadeType.REFRESH, CascadeType.DETACH })

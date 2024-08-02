@@ -5,6 +5,7 @@ import com.example.ecommerce.model.Orders;
 import com.example.ecommerce.repo.OrderRepo;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
+import lombok.RequiredArgsConstructor;
 import org.hibernate.query.Order;
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
@@ -17,14 +18,12 @@ import java.util.List;
 
 @Service
 @Transactional
+@RequiredArgsConstructor
 public class OrderService {
 
+    private final OrderRepo orderRepo;
 
-    @Autowired
-    private OrderRepo orderRepo;
-
-    @Autowired
-    private ModelMapper modelMapper;
+    private final ModelMapper modelMapper;
 
     //Order part (Show the ordered item function)
     public List<OrderDTO> getItemOrderAll(){
@@ -43,9 +42,9 @@ public class OrderService {
     public OrderDTO updateOrder(OrderDTO orderDTO, long id) {
         Orders existingOrder = orderRepo.findById(id).orElseThrow(() -> new EntityNotFoundException("Order not found with id: " + id));
 
-        existingOrder.setCity(orderDTO.getCity());
+//        existingOrder.setCity(orderDTO.getCity());
         existingOrder.setName(orderDTO.getName());
-        existingOrder.setState(orderDTO.getState());
+//        existingOrder.setState(orderDTO.getState());
         existingOrder.setAddress(orderDTO.getAddress());
         existingOrder.setZipCode(orderDTO.getZip_code());
         orderRepo.save(existingOrder);
