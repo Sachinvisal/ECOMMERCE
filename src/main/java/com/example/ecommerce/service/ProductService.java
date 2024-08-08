@@ -41,7 +41,6 @@ public class ProductService {
     @Transactional
     public ProductDTO updateProdct(ProductDTO productDTO ,long id){
      Product existingProduct = productRepo.findById(id).orElseThrow(()->new EntityNotFoundException("Order not found with id: " + id));
-
      existingProduct.setBrand(productDTO.getBrand());
      existingProduct.setProductDes(productDTO.getProduct_dec());
      existingProduct.setProductName(productDTO.getProduct_name());

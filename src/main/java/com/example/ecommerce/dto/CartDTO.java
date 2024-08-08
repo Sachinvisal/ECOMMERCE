@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
@@ -14,6 +16,6 @@ public class CartDTO {
     private Integer quantity;
     private Integer size;
     private String custom;
-    private Integer product_id;
+    private List<Integer> product_id;
 
 }
