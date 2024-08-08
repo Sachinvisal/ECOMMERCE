@@ -31,7 +31,17 @@ public class UserControler {
     @DeleteMapping("/deleteUser/{userID}")
     public void DeleteUser(@PathVariable Long userID){
       userService.deleteUser(userID);
+    }
 
+    //Update User
+
+    @PutMapping("/updateUser")
+    public UserDTO updateUser(@RequestBody UserDTO userDTO, Long id){
+        try{
+            return userService.updateUser(userDTO,id);
+        }catch(Exception e){
+            return null;
+        }
     }
 
 

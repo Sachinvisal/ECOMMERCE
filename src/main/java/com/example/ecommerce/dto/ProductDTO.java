@@ -14,9 +14,7 @@ public class ProductDTO {
     private double price;
     private String color;
     private String brand;
-    private String image1;
-    private String image2;
-    private String image3;
+    private List<String> image;
     private String product_dec;
     private String product_name;
     private String cat_ID;
