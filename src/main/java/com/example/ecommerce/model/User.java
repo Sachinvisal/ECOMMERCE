@@ -37,4 +37,5 @@ public class User {
     // User & Order relationship (1:M)
     @OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = { CascadeType.MERGE, CascadeType.REFRESH, CascadeType.DETACH })
     private List<Orders> ordersList;
+
 }
