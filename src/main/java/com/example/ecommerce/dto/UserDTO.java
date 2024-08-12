@@ -1,5 +1,6 @@
 package com.example.ecommerce.dto;
 
+import com.example.ecommerce.model.Role;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,7 +14,7 @@ public class UserDTO {
     private String username;
     private String password;
     private  String email;
-    private String role;
+    private Role role;
     private Integer contact;
 
 }
