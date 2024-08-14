@@ -14,7 +14,7 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class UserService {
+public class UserService  {
 
     private final ModelMapper modelMapper;
     private final UserRepo userRepo;
@@ -48,8 +48,9 @@ public class UserService {
         existingUser.setRole(userDTO.getRole());
         existingUser.setEmail(userDTO.getEmail());
         return userDTO;
-
     }
+
+
 
 }
 
